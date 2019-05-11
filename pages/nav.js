@@ -40,16 +40,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'home'})
                                        }}
                     >
-                        <Navigator
-                            initialRoute={{name: '首页', component: HomeIndex}}
-                            configureScene={() => {
-                                return Navigator.SceneConfigs.PushFromRight;
-                            }}
-                            renderScene={(route, navigator) => {
-                                let Component = route.component;
-                                return <Component {...route.passProps} navigator={navigator}/>;
-                            }}
-                        />
+                        <HomeIndex navigator={this.props.navigator}></HomeIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='产品'
                                        titleStyle={styles.tabText}
@@ -63,16 +54,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'category'})
                                        }}
                     >
-                        <Navigator
-                            initialRoute={{name: '产品', component: ProjectIndex}}
-                            configureScene={() => {
-                                return Navigator.SceneConfigs.PushFromRight;
-                            }}
-                            renderScene={(route, navigator) => {
-                                let Component = route.component;
-                                return <Component {...route.passProps} navigator={navigator}/>;
-                            }}
-                        />
+                        <ProjectIndex navigator={this.props.navigator}></ProjectIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='用信'
                                        titleStyle={styles.tabText}
@@ -86,16 +68,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'find'})
                                        }}
                     >
-                        <Navigator
-                            initialRoute={{name: '用信', component: CreditIndex}}
-                            configureScene={() => {
-                                return Navigator.SceneConfigs.PushFromRight;
-                            }}
-                            renderScene={(route, navigator) => {
-                                let Component = route.component;
-                                return <Component {...route.passProps} navigator={navigator}/>;
-                            }}
-                        />
+                        <CreditIndex navigator={this.props.navigator}></CreditIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='我的'
                                        titleStyle={styles.tabText}
@@ -109,16 +82,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'mine'})
                                        }}
                     >
-                        <Navigator
-                            initialRoute={{name: '我的', component: MineIndex}}
-                            configureScene={() => {
-                                return Navigator.SceneConfigs.PushFromRight;
-                            }}
-                            renderScene={(route, navigator) => {
-                                let Component = route.component;
-                                return <Component {...route.passProps} navigator={navigator}/>;
-                            }}
-                        />
+                        <MineIndex navigator={this.props.navigator}></MineIndex>
                     </TabNavigator.Item>
                 </TabNavigator>
             </View>

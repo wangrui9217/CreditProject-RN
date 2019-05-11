@@ -10,10 +10,10 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Alert, ListView, Image, ScrollView} from 'react-native';
 import {px} from './../util/fix'
 import RowList from "../../components/RowList";
+import SettingIndex from "../setting";
 
 
-type Props = {};
-export default class MineIndex extends Component<Props> {
+export default class MineIndex extends Component {
     render() {
         return (
             <ScrollView>
@@ -31,7 +31,7 @@ export default class MineIndex extends Component<Props> {
                                     <Image source={require('./../../img/mine/personal_message_red.png')}
                                            style={styles.mine6}></Image>
                                 </TouchableOpacity>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => {this.goSetting()}}>
                                     <Image source={require('./../../img/mine/personal_setting.png')}
                                            style={styles.mine7}></Image>
                                 </TouchableOpacity>
@@ -40,7 +40,7 @@ export default class MineIndex extends Component<Props> {
                         <View style={styles.hedInfo1}>
                             <Text style={styles.hedInfo2}>待还金额(元)</Text>
                             <View style={styles.hedInfo3}>
-                                <Text style={styles.hedInfo4}>200,001</Text>
+                                <Text style={styles.hedInfo4}>200,000</Text>
                                 <TouchableOpacity style={styles.hedInfo5}>
                                     <Text style={styles.hedInfo6}>还 款</Text>
                                 </TouchableOpacity>
@@ -78,6 +78,11 @@ export default class MineIndex extends Component<Props> {
 
     pressAlert() {
         Alert.alert('点击了')
+    }
+    goSetting () {
+        this.props.navigator.push({
+            component: SettingIndex
+        })
     }
 }
 
