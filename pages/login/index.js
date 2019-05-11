@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import HomeIndex from "../home";
 import {px} from './../util/fix'
-// import NavBar from "../nav";
+import NavBar from "../nav";
 // import TabNavigator from "../main.js";
 
 
@@ -76,7 +76,8 @@ export default class LoginIndex extends Component {
     login() {
         this.props.navigator.push({
             // component: MainIndex
-            component: HomeIndex,
+            // component: HomeIndex,
+            component: NavBar,
             params: {
                 phone: this.state.phone,
                 pwd: this.state.pwd,

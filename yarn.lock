@@ -6039,6 +6039,11 @@ watch@~0.18.0:
     exec-sh "^0.2.0"
     minimist "^1.2.0"
 
+watchman@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/watchman/download/watchman-1.0.0.tgz#a800f815957952ed9229c54610fb4a26897d2c21"
+  integrity sha1-qAD4FZV5Uu2SKcVGEPtKJol9LCE=
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/webidl-conversions/download/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"

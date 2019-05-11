@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler} from 'react-native';
 import Launch from "./pages/Launch";
+import LoginIndex from './pages/login'
 import {Navigator} from "react-native-deprecated-custom-components";
 let lastClickTime = 0;
 
@@ -21,7 +22,8 @@ export default class App extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{name: '启动页', component: Launch}}
+                // initialRoute={{name: '启动页', component: Launch}}
+                initialRoute={{name: '启动页', component: LoginIndex}}
                 configureScene={() => {
                     return Navigator.SceneConfigs.PushFromRight;
                 }}

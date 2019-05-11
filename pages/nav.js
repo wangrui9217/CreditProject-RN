@@ -1,103 +1,161 @@
 /*TabNavigatorDemo*/
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    Image,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-//const Home = require('../home')
-//const Product = require('../product')
-//const Credit = require('../credit')
-//const Mine = require('../mine')
-export default class NavBar extends Component{
-  constructor(props){
-    super(props);
-    this.state={
-      selectedTab:'home'
+import {px} from './util/fix'
+import HomeIndex from './home'
+import ProjectIndex from './project'
+import CreditIndex from './credit'
+import MineIndex from './mine'
+import {Navigator} from "react-native-deprecated-custom-components";
+import LoginIndex from "./login";
+
+export default class NavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedTab: 'home'
+        }
     }
-  }
-  render(){
-    return(
-      <View style={styles.container}>
-        <View style={styles.header}><Text style={{fontSize:25}}>TabNavigator组件</Text></View>
-        <TabNavigator>
-          <TabNavigator.Item title='首页'
-                             badgeText="new"
-                             selected={this.state.selectedTab==='home'}
-                             renderIcon={()=><Image style={styles.iconImg} source={require('../../img/tabbar_home_nor@2x.png')} />}
-                             renderSelectedIcon={()=><Image style={styles.iconActive} source={require('../../img/tabbar_home_sel@2x.png')} />}
-                             onPress={()=>{this.setState({selectedTab:'home'})}}
-          >
-            <View style={[styles.pageView,{backgroundColor:'#ffdd57'}]}>
-              <Text style={{fontSize:50}}>首页</Text>
-              <Home />
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <TabNavigator>
+                    <TabNavigator.Item title='首页'
+                                       titleStyle={styles.tabText}
+                                       selectedTitleStyle={styles.selectedTabText}
+                                       selected={this.state.selectedTab === 'home'}
+                                       renderIcon={() => <Image style={styles.iconImg}
+                                                                source={require('../img/tabbar_home_nor.png')}/>}
+                                       renderSelectedIcon={() => <Image style={styles.iconActive}
+                                                                        source={require('../img/tabbar_home_sel.png')}/>}
+                                       onPress={() => {
+                                           this.setState({selectedTab: 'home'})
+                                       }}
+                    >
+                        <Navigator
+                            initialRoute={{name: '首页', component: HomeIndex}}
+                            configureScene={() => {
+                                return Navigator.SceneConfigs.PushFromRight;
+                            }}
+                            renderScene={(route, navigator) => {
+                                let Component = route.component;
+                                return <Component {...route.passProps} navigator={navigator}/>;
+                            }}
+                        />
+                    </TabNavigator.Item>
+                    <TabNavigator.Item title='产品'
+                                       titleStyle={styles.tabText}
+                                       selectedTitleStyle={styles.selectedTabText}
+                                       selected={this.state.selectedTab === 'category'}
+                                       renderIcon={() => <Image style={styles.iconImg}
+                                                                source={require('./../img/tabbar_chanpin_nor.png')}/>}
+                                       renderSelectedIcon={() => <Image style={styles.iconActive}
+                                                                        source={require('./../img/tabbar_chanpin_sel.png')}/>}
+                                       onPress={() => {
+                                           this.setState({selectedTab: 'category'})
+                                       }}
+                    >
+                        <Navigator
+                            initialRoute={{name: '产品', component: ProjectIndex}}
+                            configureScene={() => {
+                                return Navigator.SceneConfigs.PushFromRight;
+                            }}
+                            renderScene={(route, navigator) => {
+                                let Component = route.component;
+                                return <Component {...route.passProps} navigator={navigator}/>;
+                            }}
+                        />
+                    </TabNavigator.Item>
+                    <TabNavigator.Item title='用信'
+                                       titleStyle={styles.tabText}
+                                       selectedTitleStyle={styles.selectedTabText}
+                                       selected={this.state.selectedTab === 'find'}
+                                       renderIcon={() => <Image style={styles.iconImg}
+                                                                source={require('./../img/tabbar_yongxin_nor.png')}/>}
+                                       renderSelectedIcon={() => <Image style={styles.iconActive}
+                                                                        source={require('./../img/tabbar_yongxin_sel.png')}/>}
+                                       onPress={() => {
+                                           this.setState({selectedTab: 'find'})
+                                       }}
+                    >
+                        <Navigator
+                            initialRoute={{name: '用信', component: CreditIndex}}
+                            configureScene={() => {
+                                return Navigator.SceneConfigs.PushFromRight;
+                            }}
+                            renderScene={(route, navigator) => {
+                                let Component = route.component;
+                                return <Component {...route.passProps} navigator={navigator}/>;
+                            }}
+                        />
+                    </TabNavigator.Item>
+                    <TabNavigator.Item title='我的'
+                                       titleStyle={styles.tabText}
+                                       selectedTitleStyle={styles.selectedTabText}
+                                       selected={this.state.selectedTab === 'mine'}
+                                       renderIcon={() => <Image style={styles.iconImg}
+                                                                source={require('./../img/tabbar_mine_nor.png')}/>}
+                                       renderSelectedIcon={() => <Image style={styles.iconActive}
+                                                                        source={require('./../img/tabbar_mine_sel.png')}/>}
+                                       onPress={() => {
+                                           this.setState({selectedTab: 'mine'})
+                                       }}
+                    >
+                        <Navigator
+                            initialRoute={{name: '我的', component: MineIndex}}
+                            configureScene={() => {
+                                return Navigator.SceneConfigs.PushFromRight;
+                            }}
+                            renderScene={(route, navigator) => {
+                                let Component = route.component;
+                                return <Component {...route.passProps} navigator={navigator}/>;
+                            }}
+                        />
+                    </TabNavigator.Item>
+                </TabNavigator>
             </View>
-          </TabNavigator.Item>
-          <TabNavigator.Item title='产品'
-                             selected={this.state.selectedTab==='category'}
-                             renderIcon={()=><Image style={styles.iconImg} source={require('../../img/tabbar_chanpin_nor@2x.png')} />}
-                             renderSelectedIcon={()=><Image style={styles.iconActive} source={require('../../img/tabbar_chanpin_sel@2x.png')} />}
-                             onPress={()=>{this.setState({selectedTab:'category'})}}
-          >
-            <View style={[styles.pageView,{backgroundColor:'#ff8454'}]}>
-              <Text style={{fontSize:50}}>分类详情</Text>
-              <Product />
-            </View>
-          </TabNavigator.Item>
-          <TabNavigator.Item title='用信'
-                             selected={this.state.selectedTab==='find'}
-                             renderIcon={()=><Image style={styles.iconImg} source={require('../../img/tabbar_yongxin_nor@2x.png')} />}
-                             renderSelectedIcon={()=><Image style={styles.iconActive} source={require('../../img/tabbar_yongxin_sel@2x.png')} />}
-                             onPress={()=>{this.setState({selectedTab:'find'})}}
-          >
-            <View style={[styles.pageView,{backgroundColor:'#9aff5a'}]}>
-              <Text style={{fontSize:50}}>发现更多</Text>
-              <Credit />
-            </View>
-          </TabNavigator.Item>
-          <TabNavigator.Item title='我的'
-                             badgeText="6"
-                             selected={this.state.selectedTab==='mine'}
-                             renderIcon={()=><Image style={styles.iconImg} source={require('../../img/tabbar_mine_nor@2x.png')} />}
-                             renderSelectedIcon={()=><Image style={styles.iconActive} source={require('../../img/tabbar_mine_sel@2x.png')} />}
-                             onPress={()=>{this.setState({selectedTab:'mine'})}}
-          >
-            <View style={[styles.pageView,{backgroundColor:'#648eff'}]}>
-              <Text style={{fontSize:50}}>我的空间</Text>
-              <Mine />
-            </View>
-          </TabNavigator.Item>
-        </TabNavigator>
-      </View>
-    )
-  }
+        )
+    }
 }
 
-const styles=StyleSheet.create({
-  container:{
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-  header:{
-    height:50,
-    backgroundColor:'#bcfffd',
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  pageView:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  iconImg:{
-    width:25,
-    height:25
-  },
-  iconActive:{
-    width:35,
-    height:35
-  }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+    },
+    header: {
+        height: 50,
+        backgroundColor: '#bcfffd',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    pageView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    iconImg: {
+        width: 36 * px,
+        height: 40 * px
+    },
+    iconActive: {
+        width: 36 * px,
+        height: 40 * px
+    },
+    tabText: {
+        color: '#999999',
+        fontSize: 20 * px
+    },
+    selectedTabText: {
+        color: '#333333',
+        fontSize: 20 * px
+    }
 });
