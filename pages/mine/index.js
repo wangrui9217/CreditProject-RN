@@ -120,13 +120,13 @@ const styles = StyleSheet.create({
         marginRight: 16*px
     },
     mine6: {
-        width: 46 * px,
-        height: 46 * px,
+        width: 56 * px,
+        height: 56 * px,
         marginRight: 44 * px
     },
     mine7: {
-        width: 46 * px,
-        height: 46 * px,
+        width: 56 * px,
+        height: 56 * px,
     },
     mine8: {
         height: 104*px,

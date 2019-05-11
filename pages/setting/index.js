@@ -10,24 +10,29 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {px} from './../util/fix'
 import RowList from "../../components/RowList";
+import Head from "../../components/head";
 
 export default class SettingIndex extends Component {
     render() {
         return (
-            <ScrollView>
-                <View style={styles.container}>
-                    <View style={styles.mt16}>
-                        <RowList leftTitle={'登录密码'} rightTitle={'修改密码'} isFinished={true}></RowList>
-                        <RowList leftTitle={'交易密码'} rightTitle={'未设置'} isFinished={false}></RowList>
-                    </View>
-                    <View style={styles.mt16}>
-                        <RowList leftTitle={'意见反馈'}></RowList>
-                        <RowList leftTitle={'关于'}></RowList>
-                    </View>
-
-
+            <View style={styles.container}>
+                <Head title={'设置'} navigator={this.props.navigator}></Head>
+                <ScrollView>
+                <View style={styles.mt16}>
+                    <RowList leftTitle={'登录密码'} rightTitle={'修改密码'} isFinished={true}></RowList>
+                    <RowList leftTitle={'交易密码'} rightTitle={'未设置'} isFinished={false}></RowList>
                 </View>
-            </ScrollView>
+                <View style={styles.mt16}>
+                    <RowList leftTitle={'意见反馈'}></RowList>
+                    <RowList leftTitle={'关于'}></RowList>
+                </View>
+                    <View style={styles.mt16}>
+                        <TouchableOpacity style={styles.logout}>
+                            <Text style={styles.logoutText}>安全退出</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </View>
         );
     }
 }
@@ -49,5 +54,15 @@ const styles = StyleSheet.create({
     },
     mt16: {
         marginTop:16*px
+    },
+    logout: {
+        height: 104*px,
+        justifyContent: 'center',
+        alignItems:'center',
+        backgroundColor:'#fff'
+    },
+    logoutText: {
+        fontSize:32*px,
+        color: '#F5222D'
     }
 });
