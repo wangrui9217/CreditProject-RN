@@ -39,11 +39,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         height: 88 * px,
         alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#fff'
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        position: 'relative'
     },
     pl32:{
         paddingLeft:32*px,
+        position:'absolute',
+        left: 0,
+        top: '50%',
+        marginTop: -39 * px/2
     },
     iconImg: {
         width: 26 * px,
