@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler} from 'react-native';
+import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler, StatusBar} from 'react-native';
 import Launch from "./pages/Launch";
 import LoginIndex from './pages/login'
 import {Navigator} from "react-native-deprecated-custom-components";
@@ -21,9 +21,16 @@ export default class App extends Component {
 
     render() {
         return (
+            <View style={styles.container}>
+                <StatusBar
+                    // backgroundColor='rgba(255,96,0,1.0)'
+                    // backgroundColor={'red'}
+                barStyle={'light-content'}
+                    // animated={true}
+            />
             <Navigator
                 // initialRoute={{name: '启动页', component: Launch}}
-                initialRoute={{name: '启动页', component: LoginIndex}}
+                initialRoute={{name: '登录页', component: LoginIndex}}
                 configureScene={() => {
                     return Navigator.SceneConfigs.PushFromRight;
                 }}
@@ -33,6 +40,7 @@ export default class App extends Component {
                     return <Component {...route.passProps} navigator={navigator}/>;
                 }}
             />
+            </View>
         );
     }
 
@@ -65,21 +73,5 @@ export default class App extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    launch: {
-        flex: 1
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    }
 });

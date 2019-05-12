@@ -47,6 +47,7 @@ export default class LoginIndex extends Component {
                     placeholder={'请输入手机号码'}
                 ></TextInput>
                 <TextInput
+                    secureTextEntry={true}
                     password={true}
                     style={styles.phoneInput}
                     onChangeText={(pwd) => this.setState({pwd})}

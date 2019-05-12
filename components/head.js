@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     },
     pl32:{
         paddingLeft:32*px,
+        paddingRight:32*px,
         position:'absolute',
         left: 0,
         top: '50%',
