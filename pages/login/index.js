@@ -20,6 +20,7 @@ import {
 import HomeIndex from "../home";
 import {px} from './../util/fix'
 import NavBar from "../nav";
+const dismissKeyboard = require('dismissKeyboard')
 // import TabNavigator from "../main.js";
 
 
@@ -75,6 +76,7 @@ export default class LoginIndex extends Component {
     }
 
     login() {
+        dismissKeyboard()
         this.props.navigator.push({
             // component: MainIndex
             // component: HomeIndex,
