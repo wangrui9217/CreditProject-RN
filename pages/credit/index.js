@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
 

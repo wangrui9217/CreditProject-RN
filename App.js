@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler, StatusBar} from 'react-native';
+import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler} from 'react-native';
 import Launch from "./pages/Launch";
 import LoginIndex from './pages/login'
 import {Navigator} from "react-native-deprecated-custom-components";
