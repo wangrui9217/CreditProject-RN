@@ -23,8 +23,8 @@ export default class App extends Component {
         return (
             <View style={styles.container}>
                 <Navigator
-                    // initialRoute={{name: '启动页', component: Launch}}
-                    initialRoute={{name: '登录页', component: LoginIndex}}
+                    initialRoute={{name: '启动页', component: Launch}}
+                    // initialRoute={{name: '登录页', component: LoginIndex}}
                     configureScene={() => {
                         return Navigator.SceneConfigs.PushFromRight;
                     }}
