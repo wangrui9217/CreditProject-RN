@@ -7,14 +7,14 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import PropTypes from "prop-types"
+import {Image, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {px} from './../pages/util/fix'
 
 export default class Head extends Component {
     static defaultProps =
         {
-            title: ''
+            title: '',
+            showReturn: true
         }
     // static propTypes = {
     //     age: PropTypes.int,
@@ -24,9 +24,15 @@ export default class Head extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => {this.props.navigator.pop()}} style={styles.pl32}>
-                    <Image style={styles.iconImg} source={require('./../img/common/left.png')}></Image>
-                </TouchableOpacity>
+                {
+                    if (this.props.showReturn) {
+                        return (
+                            <TouchableOpacity onPress={() => {this.props.navigator.pop()}} style={styles.pl32}>
+                            <Image style={styles.iconImg} source={require('./../img/common/left.png')}></Image>
+                            </TouchableOpacity>
+                        )
+                    }
+                }
                 <Text style={styles.title}>{this.props.title}</Text>
                 <Text></Text>
             </View>
@@ -43,20 +49,20 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         position: 'relative'
     },
-    pl32:{
-        paddingLeft:32*px,
-        paddingRight:32*px,
-        position:'absolute',
+    pl32: {
+        paddingLeft: 32 * px,
+        paddingRight: 32 * px,
+        position: 'absolute',
         left: 0,
         top: '50%',
-        marginTop: -39 * px/2
+        marginTop: -39 * px / 2
     },
     iconImg: {
         width: 26 * px,
         height: 39 * px,
     },
     title: {
-        color:'#333',
-        fontSize: 36*px
+        color: '#333',
+        fontSize: 36 * px
     }
 });

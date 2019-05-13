@@ -11,7 +11,26 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {px} from './../util/fix'
 
 export default class ProductItem extends Component {
+    static defaultProps =
+        {
+            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+        }
+    constructor(props) {
+        super(props);
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.state = {
+            dataSource: ds.cloneWithRows(this.props.productList)
+        };
+    }
     render() {
+        return (
+            <ListView
+                dataSource={this.state.dataSource}
+                renderRow={(rowData) => this.renderProjectItem(rowData)}
+            />
+        );
+    }
+    renderProjectItem (rowData) {
         return (
             <View style={styles.container}>
                 <View style={styles.product1}>
@@ -44,7 +63,8 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         backgroundColor: '#F3F4FB',
-        paddingTop: 32 * px
+        paddingTop: 32 * px,
+        marginBottom: 32 *px
     },
     product1: {
         flexDirection: 'row',
