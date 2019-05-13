@@ -25,18 +25,21 @@ export default class Head extends Component {
         return (
             <View style={styles.container}>
                 {
-                    if (this.props.showReturn) {
-                        return (
-                            <TouchableOpacity onPress={() => {this.props.navigator.pop()}} style={styles.pl32}>
-                            <Image style={styles.iconImg} source={require('./../img/common/left.png')}></Image>
-                            </TouchableOpacity>
-                        )
-                    }
+                    this.showBackBtn()
                 }
                 <Text style={styles.title}>{this.props.title}</Text>
                 <Text></Text>
             </View>
         );
+    }
+    showBackBtn () {
+        if (this.props.showReturn) {
+            return (
+                <TouchableOpacity onPress={() => {this.props.navigator.pop()}} style={styles.pl32}>
+                    <Image style={styles.iconImg} source={require('./../img/common/left.png')}></Image>
+                </TouchableOpacity>
+            )
+        }
     }
 }
 

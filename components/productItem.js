@@ -7,8 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {px} from './../util/fix'
+import {StyleSheet, Text, View, TouchableOpacity, ListView} from 'react-native';
+import {px} from './../pages/util/fix'
 
 export default class ProductItem extends Component {
     static defaultProps =
@@ -25,6 +25,7 @@ export default class ProductItem extends Component {
     render() {
         return (
             <ListView
+                style={styles.outSideBox}
                 dataSource={this.state.dataSource}
                 renderRow={(rowData) => this.renderProjectItem(rowData)}
             />
@@ -56,14 +57,18 @@ export default class ProductItem extends Component {
 }
 
 const styles = StyleSheet.create({
-    outSideBox: {},
+    outSideBox: {
+        paddingRight: 32*px,
+        paddingLeft:32*px,
+        width: '100%',
+    },
     container: {
-        width: 686 * px,
-        height:294 * px,
+        width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
         backgroundColor: '#F3F4FB',
         paddingTop: 32 * px,
+        paddingBottom: 32*px,
         marginBottom: 32 *px
     },
     product1: {
@@ -85,11 +90,10 @@ const styles = StyleSheet.create({
     product4: {
         flexDirection: 'row',
         justifyContent:'center',
-        marginBottom: 16 * px
     },
     product5: {
         width: 208 * px,
-        justifyContent: 'center'
+        alignItems:'center'
     },
     product6: {
         lineHeight: 68 * px,
@@ -98,7 +102,6 @@ const styles = StyleSheet.create({
     product7: {
         color: '#999',
         fontSize: 24 * px,
-        lineHeight: 32 * px
     },
     product8: {
         lineHeight: 68 * px,
