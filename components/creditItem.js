@@ -33,7 +33,9 @@ export default class CreditItem extends Component {
     }
     renderProjectItem (rowData) {
         return (
-            <View style={styles.container}>
+            <TouchableOpacity
+                activeOpacity={0.6}
+                style={styles.container}>
                 <View style={styles.credit1}>
                     <Text style={styles.credit2}>合同编号:209840934809</Text>
                     <View style={styles.credit3}>
@@ -58,20 +60,19 @@ export default class CreditItem extends Component {
                         <Text style={styles.credit11}>申请时间</Text>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }
 
 const styles = StyleSheet.create({
     outSideBox: {
-        paddingRight: 32*px,
-        paddingLeft:32*px,
         width: '100%',
+        backgroundColor:'#F3F4FB'
     },
     container: {
         width: '100%',
-        backgroundColor: '#F3F4FB',
+        backgroundColor: '#fff',
         paddingBottom: 32*px,
         paddingRight: 32*px,
         paddingLeft:32*px,

@@ -6,6 +6,7 @@ import {
     Text,
     View,
     Image,
+    StatusBar
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import {px} from './util/fix'
@@ -27,6 +28,13 @@ export default class NavBar extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    hidden={true}
+                    // backgroundColor='rgba(255,96,0,1.0)'
+                    // backgroundColor={'red'}
+                    // barStyle={'light-content'}
+                    // animated={true}
+                />
                 <TabNavigator>
                     <TabNavigator.Item title='首页'
                                        titleStyle={styles.tabText}

@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, StatusBar} from 'react-native';
 import LoginIndex from "./login";
 
 
@@ -15,6 +15,13 @@ export default class Launch extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    hidden={true}
+                    // backgroundColor='rgba(255,96,0,1.0)'
+                    // backgroundColor={'red'}
+                    // barStyle={'light-content'}
+                    // animated={true}
+                />
                 <Image style={styles.launch} source={require('./../img/launch.png')}/>
             </View>
         );

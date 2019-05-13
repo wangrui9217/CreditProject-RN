@@ -7,15 +7,15 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
 import CreditItem from "../../components/creditItem";
-
-
+import Head from "../../components/head";
 type Props = {};
 export default class ProjectIndex extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+          <Head title={'产品'} showReturn={false}/>
           <CreditItem></CreditItem>
       </View>
     );

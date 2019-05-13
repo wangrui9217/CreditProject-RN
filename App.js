@@ -22,24 +22,18 @@ export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    // backgroundColor='rgba(255,96,0,1.0)'
-                    // backgroundColor={'red'}
-                barStyle={'light-content'}
-                    // animated={true}
-            />
-            <Navigator
-                // initialRoute={{name: '启动页', component: Launch}}
-                initialRoute={{name: '登录页', component: LoginIndex}}
-                configureScene={() => {
-                    return Navigator.SceneConfigs.PushFromRight;
-                }}
-                renderScene={(route, navigator) => {
-                    this.navigator = navigator
-                    let Component = route.component;
-                    return <Component {...route.passProps} navigator={navigator}/>;
-                }}
-            />
+                <Navigator
+                    // initialRoute={{name: '启动页', component: Launch}}
+                    initialRoute={{name: '登录页', component: LoginIndex}}
+                    configureScene={() => {
+                        return Navigator.SceneConfigs.PushFromRight;
+                    }}
+                    renderScene={(route, navigator) => {
+                        this.navigator = navigator
+                        let Component = route.component;
+                        return <Component {...route.passProps} navigator={navigator}/>;
+                    }}
+                />
             </View>
         );
     }
