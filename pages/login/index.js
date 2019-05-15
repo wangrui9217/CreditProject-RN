@@ -82,7 +82,7 @@ export default class LoginIndex extends Component {
 
     login() {
         dismissKeyboard()
-        this.props.navigator.push({
+        this.props.navigator.replace({
             // component: MainIndex
             // component: HomeIndex,
             component: NavBar,

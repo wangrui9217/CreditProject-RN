@@ -9,11 +9,12 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Alert} from 'react-native';
 import ProductItem from "../../components/productItem";
+import ProjectDetail from './../project/projectDetail'
 import {px} from './../util/fix'
+import NavBar from "../nav";
 
 
-type Props = {};
-export default class HomeIndex extends Component<Props> {
+export default class HomeIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,31 +23,34 @@ export default class HomeIndex extends Component<Props> {
     }
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <View style={styles.home1}>
-                    <Image source={require('../../img/home/home_bg.png')} style={styles.home2}/>
-                    <View style={styles.home3}>
-                        <Text style={styles.home4}>小微企业信贷</Text>
+            <View style={styles.container}>
+                <ScrollView>
+                    <View style={styles.home1}>
+                        <Image source={require('../../img/home/home_bg.png')} style={styles.home2}/>
+                        <View style={styles.home3}>
+                            <Text style={styles.home4}>小微企业信贷</Text>
+                        </View>
+                        <View style={styles.home5}>
+                            {
+                                this.renderApplyTip()
+                            }
+                            {
+                                this.renderApplyState()
+                            }
+                        </View>
                     </View>
-                    <View style={styles.home5}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true}>
                         {
-                            this.renderApplyTip()
+                            this.renderScrollImage()
                         }
-                        {
-                            this.renderApplyState()
-                        }
+                    </ScrollView>
+                    <View style={styles.tipBox}>
+                        <Text style={styles.tip}>我要贷款</Text>
                     </View>
-                </View>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true}>
-                    {
-                        this.renderScrollImage()
-                    }
+                    <ProductItem pressFunc={() => this.goApply()}></ProductItem>
                 </ScrollView>
-                <View style={styles.tipBox}>
-                    <Text style={styles.tip}>我要贷款</Text>
-                </View>
-                <ProductItem pressFunc={this.goApply}></ProductItem>
-            </ScrollView>
+            </View>
+
         );
     }
     renderApplyTip () {
@@ -86,7 +90,10 @@ export default class HomeIndex extends Component<Props> {
         })
     }
     goApply () {
-        Alert.alert('111', '222')
+        this.props.navigator.push({
+            component: ProjectDetail,
+            params: {}
+        })
     }
 }
 
