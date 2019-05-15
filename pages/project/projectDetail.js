@@ -32,17 +32,51 @@ export default class ProjectDetail extends Component {
                             </View>
 
                         </View>
-                        <TouchableNativeFeedback
-                            background={TouchableNativeFeedback.SelectableBackground()}>
-                            <View style={{width: 150, height: 100, backgroundColor: 'red'}}>
-                                <Text style={{margin: 30}}>Button</Text>
+                        <View style={styles.detail}>
+                            <View style={[{marginBottom: 16*px},styles.detail1]}>
+                                <Text style={styles.detail2}>借款金额范围</Text>
+                                <Text style={styles.detail3}>1万~20万</Text>
                             </View>
-                        </TouchableNativeFeedback>
+                            <View style={styles.detail1}>
+                                <Text style={styles.detail2}>借款金额范围</Text>
+                                <Text style={styles.detail3}>1万~20万</Text>
+                            </View>
+                        </View>
+                        <View style={styles.info}>
+                            <View style={styles.info1}>
+                                <View style={styles.info2}></View>
+                                <Text style={styles.info3}>产品特点</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.info4}>产品特点产品特点产品特点产品特点产品特点产品特点产品特点产品特点</Text>
+                            </View>
+                            <View style={styles.info1}>
+                                <View style={styles.info2}></View>
+                                <Text style={styles.info3}>产品介绍</Text>
+                            </View>
+                            <View style={styles.list}>
+                                <Text style={styles.listItem1}>产品名称</Text>
+                                <Text style={styles.listItem2}>产品名产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称称产品名称产品名称</Text>
+                            </View>
+                            <View style={styles.list}>
+                                <Text style={styles.listItem1}>产品类型</Text>
+                                <Text style={styles.listItem2}>产品名产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称称产品名称产品名称</Text>
+                            </View>
+                            <View style={styles.list}>
+                                <Text style={styles.listItem1}>风险说明</Text>
+                                <Text style={styles.listItem2}>产品名产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称称产品名称产品名称</Text>
+                            </View>
+                        </View>
                     </ScrollView>
                 </View>
-                <TouchableOpacity style={styles.bottom}>
-                    <Text style={styles.bottomBtn}>立即申请</Text>
-                </TouchableOpacity>
+                <TouchableNativeFeedback
+                    background={TouchableNativeFeedback.SelectableBackground()}
+                    >
+                        <View style={styles.bottom}>
+                            <Text style={styles.bottomBtn}>立即申请</Text>
+                        </View>
+
+                </TouchableNativeFeedback>
             </View>
         );
     }
@@ -96,5 +130,64 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 36*px,
         lineHeight: 90*px
+    },
+    detail: {
+        padding: 32*px,
+        backgroundColor: '#fff',
+        marginBottom: 32*px
+    },
+    detail1: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+    },
+    detail2: {
+        color: '#999',
+        fontSize: 28*px
+    },
+    detail3: {
+        color: '#999',
+        fontSize: 33*px
+    },
+    info: {
+        paddingLeft: 32*px,
+        paddingRight: 32*px,
+        paddingBottom: 32*px,
+        backgroundColor: '#fff'
+    },
+    info1: {
+        flexDirection: 'row',
+        height: 102*px,
+        alignItems: 'center'
+    },
+    info2: {
+        width: 16*px,
+        height: 16*px,
+        borderColor: '#2B64FF',
+        borderRadius: 16*px,
+        borderWidth: 3,
+        marginRight:8*px
+    },
+    info3: {
+        fontSize: 32*px,
+        color: '#333'
+    },
+    info4: {
+        color: '#666',
+        fontSize: 28*px
+    },
+    list: {
+        flexDirection: 'row',
+        marginBottom:5*px
+    },
+    listItem1: {
+        fontSize:28*px,
+        color: '#999',
+        marginRight: 42*px
+    },
+    listItem2: {
+        fontSize: 28*px,
+        color: '#666',
+        flex: 1,
+        flexWrap: 'wrap'
     }
 });
