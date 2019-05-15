@@ -24,11 +24,11 @@ export default class CreditItem extends Component {
     }
     render() {
         return (
-            <ScrollView>
+            <View>
                 {
                     this.renderProjectItem(this.props.productList)
                 }
-            </ScrollView>
+            </View>
         );
     }
     renderProjectItem (rowData) {

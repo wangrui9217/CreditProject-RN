@@ -7,23 +7,61 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
 import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
+import ProductItem from "../../components/productItem";
+import {px} from "../util/fix";
 type Props = {};
 export default class ProjectIndex extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
           <Head title={'产品'} showReturn={false}/>
-          <CreditItem></CreditItem>
+          <ScrollView>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true}>
+                  {
+                      this.renderScrollImage()
+                  }
+              </ScrollView>
+              <View style={styles.tipBox}>
+                  <Text style={styles.tip}>我要贷款</Text>
+              </View>
+              <ProductItem></ProductItem>
+          </ScrollView>
       </View>
     );
   }
+    renderScrollImage() {
+        return [1,2,3,4,5,6].map((val, index) => {
+            return(
+                <View style={styles.lunboBox} key={index}>
+                    <Image source={require('./../../img/common/lunbo.png')} style={styles.lunbo}/>
+                </View>
+            )
+        })
+    }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  }
+  },
+    lunbo: {
+        width: 686*px,
+        height:176*px
+    },
+    lunboBox: {
+        alignItems: 'center',
+        width: 750*px
+    },
+    tipBox:{
+        paddingLeft: 33*px,
+        paddingTop: 56*px,
+        paddingBottom: 16*px
+    },
+    tip:{
+        fontSize:36*px,
+        color: '#333'
+    }
 });
