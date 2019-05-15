@@ -24,11 +24,11 @@ export default class ProductItem extends Component {
     }
     render() {
         return (
-            <ScrollView style={styles.outSideBox}>
+            <View style={styles.outSideBox}>
                 {
                     this.renderProjectItem(this.props.productList)
                 }
-            </ScrollView>
+            </View>
         );
     }
     renderProjectItem (rowData) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, Image, View, StyleSheet, TextInput, ScrollView, ListView, TouchableOpacity } from 'react-native';
+import { AppRegistry, Text, Image, View, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
 
 
