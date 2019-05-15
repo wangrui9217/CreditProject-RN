@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ListView, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {px} from './../pages/util/fix'
 
 export default class ProductItem extends Component {
@@ -17,10 +17,6 @@ export default class ProductItem extends Component {
         }
     constructor(props) {
         super(props);
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        this.state = {
-            dataSource: ds.cloneWithRows(this.props.productList)
-        };
     }
     render() {
         return (

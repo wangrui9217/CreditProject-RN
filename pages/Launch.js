@@ -39,7 +39,7 @@ export default class Launch extends Component {
     componentDidMount() {
         toLogin = setInterval(() => {
             let time = this.state.leftTime
-            if (time === 0) {
+            if (time === 1) {
                 clearInterval(toLogin)
                 this.toLogin()
             } else {
