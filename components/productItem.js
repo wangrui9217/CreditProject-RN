@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ListView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, ListView, ScrollView} from 'react-native';
 import {px} from './../pages/util/fix'
 
 export default class ProductItem extends Component {
@@ -24,34 +24,38 @@ export default class ProductItem extends Component {
     }
     render() {
         return (
-            <ListView
-                style={styles.outSideBox}
-                dataSource={this.state.dataSource}
-                renderRow={(rowData) => this.renderProjectItem(rowData)}
-            />
+            <ScrollView style={styles.outSideBox}>
+                {
+                    this.renderProjectItem(this.props.productList)
+                }
+            </ScrollView>
         );
     }
     renderProjectItem (rowData) {
         return (
-            <View style={styles.container}>
-                <View style={styles.product1}>
-                    <Text style={styles.product2}>信用快贷</Text>
-                    <Text style={styles.product3}>额度最高300万</Text>
-                </View>
-                <View style={styles.product4}>
-                    <View style={styles.product5}>
-                        <Text style={styles.product6}>3.988%</Text>
-                        <Text style={styles.product7}>贷款年利率</Text>
+            rowData.map((val, index) => {
+                return (
+                <View style={styles.container} key={index}>
+                    <View style={styles.product1}>
+                        <Text style={styles.product2}>信用快贷</Text>
+                        <Text style={styles.product3}>额度最高300万</Text>
                     </View>
-                    <View style={styles.product5}>
-                        <Text style={styles.product8}>12个月</Text>
-                        <Text style={styles.product7}>贷款期限</Text>
+                    <View style={styles.product4}>
+                        <View style={styles.product5}>
+                            <Text style={styles.product6}>3.988%</Text>
+                            <Text style={styles.product7}>贷款年利率</Text>
+                        </View>
+                        <View style={styles.product5}>
+                            <Text style={styles.product8}>12个月</Text>
+                            <Text style={styles.product7}>贷款期限</Text>
+                        </View>
                     </View>
+                    <TouchableOpacity style={styles.btn}>
+                        <Text style={styles.btnText}>立即申请</Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btnText}>立即申请</Text>
-                </TouchableOpacity>
-            </View>
+            )
+            })
         );
     }
 }
@@ -64,8 +68,6 @@ const styles = StyleSheet.create({
     },
     container: {
         width: '100%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
         backgroundColor: '#F3F4FB',
         paddingTop: 32 * px,
         paddingBottom: 32*px,

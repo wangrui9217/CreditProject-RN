@@ -12,6 +12,7 @@ import {
     Text,
     View,
     TouchableOpacity,
+    TouchableNativeFeedback,
     Image,
     Dimensions,
     TextInput,
@@ -56,18 +57,17 @@ export default class LoginIndex extends Component {
                     placeholder={'请输入密码'}
                 ></TextInput>
                 <TouchableOpacity
-                    onPress={this.login.bind(this)}
                     style={styles.btn}
-                    activeOpacity={0.5}>
+                    onPress={this.login.bind(this)}>
                     <Text style={styles.btnText}>登 录</Text>
                 </TouchableOpacity>
                 <View style={styles.bottom}>
                     <TouchableOpacity
                         style={styles.left}
-                        activeOpacity={0.5}>
+                        >
                         <Text>忘记密码</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity>
                         <Text>免费注册</Text>
                     </TouchableOpacity>
                 </View>

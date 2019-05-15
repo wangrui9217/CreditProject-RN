@@ -4867,8 +4867,8 @@ react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.4:
 
 react-native-deprecated-custom-components@^0.1.2:
   version "0.1.2"
-  resolved "https://registry.npm.taobao.org/react-native-deprecated-custom-components/download/react-native-deprecated-custom-components-0.1.2.tgz#ba10d40942bd90e1a98f989fd2809ea2466d413f"
-  integrity sha1-uhDUCUK9kOGpj5if0oCeokZtQT8=
+  resolved "https://registry.yarnpkg.com/react-native-deprecated-custom-components/-/react-native-deprecated-custom-components-0.1.2.tgz#ba10d40942bd90e1a98f989fd2809ea2466d413f"
+  integrity sha512-CDI9xfR/7UIWV0plveokfqvTWzNDrEo3dLk3IqllQ6pENNMnX20kcGwQVbIYYDx4TttEstVeZWgMrQ3L7lZzkw==
   dependencies:
     create-react-class "15.6.0"
     fbjs "~0.8.9"
@@ -6041,8 +6041,8 @@ watch@~0.18.0:
 
 watchman@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/watchman/download/watchman-1.0.0.tgz#a800f815957952ed9229c54610fb4a26897d2c21"
-  integrity sha1-qAD4FZV5Uu2SKcVGEPtKJol9LCE=
+  resolved "https://registry.yarnpkg.com/watchman/-/watchman-1.0.0.tgz#a800f815957952ed9229c54610fb4a26897d2c21"
+  integrity sha512-f7sP6DSVQzNUAXIBctvYyJyq6/j/FtWoEn6yh/Ot/E14a3am7JMH0tygWt6iE+T+DT+BNOUAT3hM/gZ7W9Ycmw==
 
 webidl-conversions@^4.0.2:
   version "4.0.2"

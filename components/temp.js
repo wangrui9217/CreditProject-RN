@@ -7,10 +7,10 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ListView, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, ListView} from 'react-native';
 import {px} from './../pages/util/fix'
 
-export default class CreditItem extends Component {
+export default class CreditItemTemp extends Component {
     static defaultProps =
         {
             productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
@@ -24,48 +24,43 @@ export default class CreditItem extends Component {
     }
     render() {
         return (
-            <ScrollView>
-                {
-                    this.renderProjectItem(this.props.productList)
-                }
-            </ScrollView>
+            <ListView
+                style={styles.outSideBox}
+                dataSource={this.state.dataSource}
+                renderRow={(rowData) => this.renderProjectItem(rowData)}
+            />
         );
     }
     renderProjectItem (rowData) {
         return (
-            rowData.map((val, index) => {
-                return (
-                    <TouchableOpacity
-                        key={index}
-                        activeOpacity={0.6}
-                        style={styles.container}>
-                        <View style={styles.credit1}>
-                            <Text style={styles.credit2}>合同编号:209840934809</Text>
-                            <View style={styles.credit3}>
-                                <Text style={styles.credit4}>签署合同</Text>
-                            </View>
-                        </View>
-                        <View style={styles.credit5}>
-                            <Text style={styles.credit6}>信用快贷</Text>
-                            <Text style={styles.credit7}>额度最高300万</Text>
-                        </View>
-                        <View style={styles.credit8}>
-                            <View style={styles.credit9}>
-                                <Text style={styles.credit10}>500,000.00</Text>
-                                <Text style={styles.credit11}>借款金额</Text>
-                            </View>
-                            <View style={styles.credit9}>
-                                <Text style={styles.credit12}>12</Text>
-                                <Text style={styles.credit11}>期数</Text>
-                            </View>
-                            <View style={styles.credit9}>
-                                <Text style={styles.credit12}>2018-08-08</Text>
-                                <Text style={styles.credit11}>申请时间</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                )
-            })
+            <TouchableOpacity
+                activeOpacity={0.6}
+                style={styles.container}>
+                <View style={styles.credit1}>
+                    <Text style={styles.credit2}>合同编号:209840934809</Text>
+                    <View style={styles.credit3}>
+                        <Text style={styles.credit4}>签署合同</Text>
+                    </View>
+                </View>
+                <View style={styles.credit5}>
+                    <Text style={styles.credit6}>信用快贷</Text>
+                    <Text style={styles.credit7}>额度最高300万</Text>
+                </View>
+                <View style={styles.credit8}>
+                    <View style={styles.credit9}>
+                        <Text style={styles.credit10}>500,000.00</Text>
+                        <Text style={styles.credit11}>借款金额</Text>
+                    </View>
+                    <View style={styles.credit9}>
+                        <Text style={styles.credit12}>12</Text>
+                        <Text style={styles.credit11}>期数</Text>
+                    </View>
+                    <View style={styles.credit9}>
+                        <Text style={styles.credit12}>2018-08-08</Text>
+                        <Text style={styles.credit11}>申请时间</Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
         );
     }
 }
