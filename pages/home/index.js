@@ -7,13 +7,19 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Alert} from 'react-native';
 import ProductItem from "../../components/productItem";
 import {px} from './../util/fix'
 
 
 type Props = {};
 export default class HomeIndex extends Component<Props> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            applyState: 1
+        }
+    }
     render() {
         return (
             <ScrollView style={styles.container}>
@@ -23,8 +29,12 @@ export default class HomeIndex extends Component<Props> {
                         <Text style={styles.home4}>小微企业信贷</Text>
                     </View>
                     <View style={styles.home5}>
-                        <Text style={styles.home6}>暂无额度</Text>
-                        <Text style={styles.home7}>授信申请失败</Text>
+                        {
+                            this.renderApplyTip()
+                        }
+                        {
+                            this.renderApplyState()
+                        }
                     </View>
                 </View>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true}>
@@ -35,9 +45,36 @@ export default class HomeIndex extends Component<Props> {
                 <View style={styles.tipBox}>
                     <Text style={styles.tip}>我要贷款</Text>
                 </View>
-                <ProductItem></ProductItem>
+                <ProductItem pressFunc={this.goApply}></ProductItem>
             </ScrollView>
         );
+    }
+    renderApplyTip () {
+        if (this.state.applyState === 0) {
+            return(
+                <Text style={styles.home6}>暂无额度</Text>
+            )
+        } else {
+            return(
+                <View style={{alignItems: 'center'}}>
+                    <Text style={styles.home11}>我的额度(元)</Text>
+                    <Text style={styles.home10}>200,000</Text>
+                </View>
+            )
+        }
+    }
+    renderApplyState () {
+        if (this.state.applyState === 0) {
+            return(
+                <Text style={styles.home7}>授信申请失败</Text>
+            )
+        } else {
+            return(
+                <TouchableOpacity style={styles.home8}>
+                    <Text style={styles.home9}>申请额度</Text>
+                </TouchableOpacity>
+            )
+        }
     }
     renderScrollImage() {
         return [1,2,3,4,5,6].map((val, index) => {
@@ -47,6 +84,9 @@ export default class HomeIndex extends Component<Props> {
                 </View>
             )
         })
+    }
+    goApply () {
+        Alert.alert('111', '222')
     }
 }
 
@@ -78,7 +118,8 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         position: 'absolute',
-        top: 290 * px
+        top: 250 * px,
+        bottom: 0
     },
     home6: {
         color: '#fff',
@@ -89,6 +130,31 @@ const styles = StyleSheet.create({
         fontSize: 28 * px,
         color: '#fff'
     },
+    home8: {
+        width: 352*px,
+        height: 60*px,
+        borderRadius: 60*px,
+        borderWidth: 1,
+        borderColor: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        bottom: 100*px
+    },
+    home9: {
+        fontSize: 26 * px,
+        color: '#fff'
+    },
+    home10: {
+        fontSize: 80*px,
+        color: '#FFFFFF'
+    },
+    home11: {
+        fontSize:28*px,
+        color: '#fff',
+        opacity: 0.8
+    },
+    home12: {},
     lunbo: {
         width: 686*px,
         height:176*px

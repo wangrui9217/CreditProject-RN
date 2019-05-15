@@ -13,7 +13,8 @@ import {px} from './../pages/util/fix'
 export default class ProductItem extends Component {
     static defaultProps =
         {
-            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'],
+            pressFunc: () => {}
         }
     constructor(props) {
         super(props);
@@ -46,7 +47,7 @@ export default class ProductItem extends Component {
                             <Text style={styles.product7}>贷款期限</Text>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={() => {this.props.pressFunc()}}>
                         <Text style={styles.btnText}>立即申请</Text>
                     </TouchableOpacity>
                 </View>

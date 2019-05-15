@@ -13,7 +13,8 @@ import {px} from './../pages/util/fix'
 export default class CreditItem extends Component {
     static defaultProps =
         {
-            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'],
+            pressFunc: () => {}
         }
     constructor(props) {
         super(props);
@@ -32,6 +33,7 @@ export default class CreditItem extends Component {
             rowData.map((val, index) => {
                 return (
                     <TouchableOpacity
+                        onPress={() => {this.props.pressFunc()}}
                         key={index}
                         activeOpacity={0.6}
                         style={styles.container}>
