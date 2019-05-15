@@ -38,8 +38,8 @@ export default class ProjectDetail extends Component {
                                 <Text style={styles.detail3}>1万~20万</Text>
                             </View>
                             <View style={styles.detail1}>
-                                <Text style={styles.detail2}>借款金额范围</Text>
-                                <Text style={styles.detail3}>1万~20万</Text>
+                                <Text style={styles.detail2}>还款方式</Text>
+                                <Text style={styles.detail3}>等额本金</Text>
                             </View>
                         </View>
                         <View style={styles.info}>
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         height: 16*px,
         borderColor: '#2B64FF',
         borderRadius: 16*px,
-        borderWidth: 3,
+        borderWidth: 3*px,
         marginRight:8*px
     },
     info3: {
