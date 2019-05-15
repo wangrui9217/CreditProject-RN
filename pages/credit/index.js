@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
 
@@ -17,7 +17,9 @@ export default class CreditIndex extends Component<Props> {
     return (
       <View style={styles.container}>
         <Head title={'用信'} showReturn={false}/>
-          <CreditItem></CreditItem>
+          <ScrollView>
+              <CreditItem></CreditItem>
+          </ScrollView>
       </View>
     );
   }
