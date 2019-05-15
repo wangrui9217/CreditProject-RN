@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, ScrollView, ListView} from 'react-native';
 import {px} from './../pages/util/fix'
 
 export default class CreditItem extends Component {
