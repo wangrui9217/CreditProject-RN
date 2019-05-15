@@ -16,7 +16,7 @@ import {
     Image,
     Dimensions,
     TextInput,
-    Alert
+    Alert, StatusBar
 } from 'react-native';
 import HomeIndex from "../home";
 import {px} from './../util/fix'
@@ -37,6 +37,11 @@ export default class LoginIndex extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    hidden={false}
+                    barStyle={'dark-content'}
+                    backgroundColor={'#fff'}
+                />
                 <Image style={styles.logo} source={require('../../img/logo_sing.png')}/>
                 <Text style={styles.text}>小微企业信贷</Text>
                 <TextInput
