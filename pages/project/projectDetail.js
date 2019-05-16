@@ -145,8 +145,8 @@ const styles = StyleSheet.create({
         fontSize: 28*px
     },
     detail3: {
-        color: '#999',
-        fontSize: 33*px
+        color: '#333',
+        fontSize: 28*px
     },
     info: {
         paddingLeft: 32*px,
