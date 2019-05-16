@@ -7,18 +7,35 @@
  */
 
 import React, {Component} from 'react';
-import {Image, Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, ScrollView, StyleSheet, Text, View, RefreshControl} from 'react-native';
 import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
 import ProductItem from "../../components/productItem";
 import {px} from "../util/fix";
-type Props = {};
-export default class ProjectIndex extends Component<Props> {
-  render() {
+import ProjectDetail from "./projectDetail";
+import DemoComponent from './../demo'
+export default class ProjectIndex extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            refreshing: false,
+        };
+    }
+    _onRefresh = () => {
+        this.setState({refreshing: true});
+        setTimeout(() => {
+            this.setState({refreshing: false});
+        }, 3000)
+    }
+    render() {
     return (
       <View style={styles.container}>
           <Head title={'产品'} showReturn={false}/>
-          <ScrollView>
+          <ScrollView   refreshControl={
+              <RefreshControl
+                  refreshing={this.state.refreshing}
+                  onRefresh={this._onRefresh}/>}
+              >
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true}>
                   {
                       this.renderScrollImage()
@@ -27,12 +44,20 @@ export default class ProjectIndex extends Component<Props> {
               <View style={styles.tipBox}>
                   <Text style={styles.tip}>我要贷款</Text>
               </View>
-              <ProductItem></ProductItem>
+              <ProductItem pressFunc={(val, index) => this.goApply(val, index)}></ProductItem>
               <Image source={require('./../../img/project/imag_guanggaoci_chanpin.png')} style={styles.bottomImg} resizeMode={'contain'}/>
           </ScrollView>
       </View>
     );
   }
+    goApply (val, index) {
+        this.props.navigator.push({
+            component: DemoComponent,
+            passProps: {
+                id: val
+            }
+        })
+    }
     renderScrollImage() {
         return [1,2,3,4,5,6].map((val, index) => {
             return(

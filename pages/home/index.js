@@ -93,7 +93,6 @@ export default class HomeIndex extends Component {
         // Alert.alert(val, index.toString())
         this.props.navigator.push({
             component: ProjectDetail,
-            type: 'Normal',//动画类型
             passProps: {
                 id: val
             }
