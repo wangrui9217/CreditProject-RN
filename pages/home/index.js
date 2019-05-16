@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     },
     home2: {
         width: '100%',
-        height: 632 * px
+        height: 580 * px
     },
     home3: {
         width: '100%',

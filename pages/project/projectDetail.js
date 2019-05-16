@@ -7,11 +7,36 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity,ScrollView,TouchableNativeFeedback} from 'react-native';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    ScrollView,
+    TouchableNativeFeedback,
+    RefreshControl
+} from 'react-native';
 import Head from "../../components/head";
 import {px} from './../util/fix'
 
 export default class ProjectDetail extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            refreshing: true
+        }
+    }
+    componentDidMount () {
+        // this.setState({refreshing: true});
+        this._onRefresh()
+    }
+    _onRefresh () {
+        this.setState({refreshing: true});
+        setTimeout(() => {
+            this.setState({refreshing: false});
+        }, 3000)
+    }
     static defaultProps =
         {
             id: '信用快贷'
@@ -21,7 +46,10 @@ export default class ProjectDetail extends Component {
             <View style={styles.container}>
                 <Head title={this.props.data.name} navigator={this.props.navigator}></Head>
                 <View style={styles.box}>
-                    <ScrollView>
+                    <ScrollView refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={this._onRefresh}/>}>
                         <View style={styles.box1}>
                             <Text style={styles.box5}>{this.props.data.name}</Text>
                             <View style={styles.box6}>
