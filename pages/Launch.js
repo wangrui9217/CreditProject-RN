@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, StatusBar, Alert, TouchableOpacity} from 'react-native';
 import LoginIndex from "./login";
+import NavBar from './nav'
 let toLogin = ''
 export default class Launch extends Component {
     constructor(props) {
@@ -53,7 +54,8 @@ export default class Launch extends Component {
     }
     toLogin() {
         this.props.navigator.replace({
-            component:LoginIndex,
+            // component:LoginIndex,
+            component:NavBar,
         })
     }
 }

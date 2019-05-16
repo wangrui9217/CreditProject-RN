@@ -11,6 +11,8 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 're
 import {px} from './../util/fix'
 import RowList from "../../components/RowList";
 import Head from "../../components/head";
+import NavBar from "../nav";
+import LoginIndex from './../login'
 
 export default class SettingIndex extends Component {
     render() {
@@ -27,13 +29,18 @@ export default class SettingIndex extends Component {
                     <RowList leftTitle={'关于'}></RowList>
                 </View>
                     <View style={styles.mt16}>
-                        <TouchableOpacity style={styles.logout}>
+                        <TouchableOpacity style={styles.logout} onPress={() => this.layOut()}>
                             <Text style={styles.logoutText}>安全退出</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
             </View>
         );
+    }
+    layOut () {
+        this.props.navigator.replace({
+            component: LoginIndex,
+        })
     }
 }
 
