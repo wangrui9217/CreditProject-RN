@@ -26,7 +26,7 @@ export default class HomeIndex extends Component {
             <View style={styles.container}>
                 <ScrollView>
                     <View style={styles.home1}>
-                        <Image source={require('../../img/home/home_bg.png')} style={styles.home2}/>
+                        <Image source={require('../../img/home/home_bg.png')} style={styles.home2} resizeMode={'stretch'}/>
                         <View style={styles.home3}>
                             <Text style={styles.home4}>小微企业信贷</Text>
                         </View>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         position: 'absolute',
-        top: 250 * px,
+        top: 230 * px,
         bottom: 0
     },
     home6: {
