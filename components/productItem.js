@@ -47,7 +47,7 @@ export default class ProductItem extends Component {
                             <Text style={styles.product7}>贷款期限</Text>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.btn} onPress={() => {this.props.pressFunc()}}>
+                    <TouchableOpacity style={styles.btn} onPress={() => this.props.pressFunc(val, index)}>
                         <Text style={styles.btnText}>立即申请</Text>
                     </TouchableOpacity>
                 </View>

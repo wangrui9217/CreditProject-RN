@@ -27,6 +27,8 @@ export default class App extends Component {
                     // initialRoute={{name: '登录页', component: LoginIndex}}
                     configureScene={() => {
                         return Navigator.SceneConfigs.PushFromRight;
+                        // return Navigator.SceneConfigs.FloatFromBottom
+                        // return Navigator.SceneConfigs.FadeAndroid
                     }}
                     renderScene={(route, navigator) => {
                         this.navigator = navigator

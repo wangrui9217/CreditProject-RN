@@ -88,7 +88,7 @@ export default class LoginIndex extends Component {
             // component: HomeIndex,
             component: NavBar,
             // component: ScrollableTab,
-            params: {
+            passProps: {
                 phone: this.state.phone,
                 pwd: this.state.pwd,
             }

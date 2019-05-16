@@ -12,10 +12,14 @@ import Head from "../../components/head";
 import {px} from './../util/fix'
 
 export default class ProjectDetail extends Component {
+    static defaultProps =
+        {
+            id: '信用快贷'
+        }
     render() {
         return (
             <View style={styles.container}>
-                <Head title={'信用快贷'} navigator={this.props.navigator}></Head>
+                <Head title={this.props.id} navigator={this.props.navigator}></Head>
                 <View style={styles.box}>
                     <ScrollView>
                         <View style={styles.box1}>
@@ -71,6 +75,7 @@ export default class ProjectDetail extends Component {
                 </View>
                 <TouchableNativeFeedback
                     background={TouchableNativeFeedback.SelectableBackground()}
+                    onPress={() => {this.props.navigator.pop()}}
                     >
                         <View style={styles.bottom}>
                             <Text style={styles.bottomBtn}>立即申请</Text>
@@ -79,6 +84,9 @@ export default class ProjectDetail extends Component {
                 </TouchableNativeFeedback>
             </View>
         );
+    }
+    componentDidMount() {
+        // console.log(this.props)
     }
 }
 

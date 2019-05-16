@@ -47,7 +47,7 @@ export default class HomeIndex extends Component {
                     <View style={styles.tipBox}>
                         <Text style={styles.tip}>我要贷款</Text>
                     </View>
-                    <ProductItem pressFunc={() => this.goApply()}></ProductItem>
+                    <ProductItem pressFunc={(val, index) => this.goApply(val, index)}></ProductItem>
                 </ScrollView>
             </View>
 
@@ -89,10 +89,14 @@ export default class HomeIndex extends Component {
             )
         })
     }
-    goApply () {
+    goApply (val ,index) {
+        // Alert.alert(val, index.toString())
         this.props.navigator.push({
             component: ProjectDetail,
-            params: {}
+            type: 'Normal',//动画类型
+            passProps: {
+                id: val
+            }
         })
     }
     componentDidMount () {
