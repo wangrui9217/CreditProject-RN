@@ -94,7 +94,7 @@ export default class HomeIndex extends Component {
         this.props.navigator.push({
             component: ProjectDetail,
             passProps: {
-                id: val
+                data: val
             }
         })
     }

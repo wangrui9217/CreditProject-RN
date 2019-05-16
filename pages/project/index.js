@@ -54,7 +54,7 @@ export default class ProjectIndex extends Component{
         this.props.navigator.push({
             component: DemoComponent,
             passProps: {
-                id: val
+                data: val
             }
         })
     }

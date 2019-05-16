@@ -9,11 +9,12 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {px} from './../pages/util/fix'
+import {productList} from './../pages/util/json'
 
 export default class ProductItem extends Component {
     static defaultProps =
         {
-            productList: ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'],
+            productList: productList,
             pressFunc: () => {}
         }
     constructor(props) {
@@ -34,16 +35,16 @@ export default class ProductItem extends Component {
                 return (
                 <View style={styles.container} key={index}>
                     <View style={styles.product1}>
-                        <Text style={styles.product2}>信用快贷</Text>
-                        <Text style={styles.product3}>额度最高300万</Text>
+                        <Text style={styles.product2}>{val.name}</Text>
+                        <Text style={styles.product3}>额度最高{val.quota}万</Text>
                     </View>
                     <View style={styles.product4}>
                         <View style={styles.product5}>
-                            <Text style={styles.product6}>3.988%</Text>
+                            <Text style={styles.product6}>{val.rate}%</Text>
                             <Text style={styles.product7}>贷款年利率</Text>
                         </View>
                         <View style={styles.product5}>
-                            <Text style={styles.product8}>12个月</Text>
+                            <Text style={styles.product8}>{val.term}个月</Text>
                             <Text style={styles.product7}>贷款期限</Text>
                         </View>
                     </View>

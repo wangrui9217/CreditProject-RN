@@ -19,18 +19,18 @@ export default class ProjectDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Head title={this.props.id} navigator={this.props.navigator}></Head>
+                <Head title={this.props.data.name} navigator={this.props.navigator}></Head>
                 <View style={styles.box}>
                     <ScrollView>
                         <View style={styles.box1}>
-                            <Text style={styles.box5}>信用快贷</Text>
+                            <Text style={styles.box5}>{this.props.data.name}</Text>
                             <View style={styles.box6}>
                                 <View style={styles.box2}>
-                                    <Text style={styles.box3}>5.0025%</Text>
+                                    <Text style={styles.box3}>{this.props.data.rate}%</Text>
                                     <Text style={styles.box4}>七日年化收益率</Text>
                                 </View>
                                 <View style={styles.box2}>
-                                    <Text style={styles.box7}>12个月</Text>
+                                    <Text style={styles.box7}>{this.props.data.term}个月</Text>
                                     <Text style={styles.box4}>产品期限</Text>
                                 </View>
                             </View>
