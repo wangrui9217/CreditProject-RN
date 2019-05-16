@@ -28,6 +28,7 @@ export default class ProjectIndex extends Component<Props> {
                   <Text style={styles.tip}>我要贷款</Text>
               </View>
               <ProductItem></ProductItem>
+              <Image source={require('./../../img/project/imag_guanggaoci_chanpin.png')} style={styles.bottomImg} resizeMode={'contain'}/>
           </ScrollView>
       </View>
     );
@@ -63,5 +64,13 @@ const styles = StyleSheet.create({
     tip:{
         fontSize:36*px,
         color: '#333'
+    },
+    bottomImg: {
+      marginRight: 'auto',
+        marginLeft: 'auto',
+        width: 312*px,
+        height: 82*px,
+        marginTop: 64*px,
+        marginBottom: 32*px
     }
 });

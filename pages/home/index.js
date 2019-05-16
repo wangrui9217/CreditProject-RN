@@ -95,6 +95,16 @@ export default class HomeIndex extends Component {
             params: {}
         })
     }
+    componentDidMount () {
+        Alert.alert(
+            '签署合同',
+            '您有一个产品订单审核成功，签署合同后将收到你申请的借款。',
+            [
+                {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: '签署合同', onPress: () => console.log('OK Pressed')},
+            ],
+        )
+    }
 }
 
 const styles = StyleSheet.create({
