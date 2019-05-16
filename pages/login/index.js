@@ -22,6 +22,7 @@ import HomeIndex from "../home";
 import {px} from './../util/fix'
 import NavBar from "../nav";
 const dismissKeyboard = require('dismissKeyboard')
+import ScrollableTab from './../scrollTab'
 // import TabNavigator from "../main.js";
 
 
@@ -86,6 +87,7 @@ export default class LoginIndex extends Component {
             // component: MainIndex
             // component: HomeIndex,
             component: NavBar,
+            // component: ScrollableTab,
             params: {
                 phone: this.state.phone,
                 pwd: this.state.pwd,
