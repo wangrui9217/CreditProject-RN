@@ -106,7 +106,8 @@ export default class HomeIndex extends Component {
     goApply (val ,index) {
         // Alert.alert(val, index.toString())
         this.props.navigator.push({
-            component: ProjectDetail,
+            // component: ProjectDetail,
+            name: 'ProjectDetail',
             passProps: {
                 data: val
             }

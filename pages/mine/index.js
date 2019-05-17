@@ -81,7 +81,8 @@ export default class MineIndex extends Component {
     }
     goSetting () {
         this.props.navigator.push({
-            component: SettingIndex
+            name: 'SettingIndex'
+            // component: SettingIndex
         })
     }
 }

@@ -39,7 +39,8 @@ export default class SettingIndex extends Component {
     }
     layOut () {
         this.props.navigator.replace({
-            component: LoginIndex,
+            // component: LoginIndex,
+            name: 'LoginIndex'
         })
     }
 }

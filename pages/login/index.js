@@ -23,7 +23,6 @@ import {px} from './../util/fix'
 import NavBar from "../nav";
 const dismissKeyboard = require('dismissKeyboard')
 import ScrollableTab from './../scrollTab'
-// import TabNavigator from "../main.js";
 
 
 export default class LoginIndex extends Component {
@@ -86,8 +85,9 @@ export default class LoginIndex extends Component {
         this.props.navigator.replace({
             // component: MainIndex
             // component: HomeIndex,
-            component: NavBar,
+            // component: NavBar,
             // component: ScrollableTab,
+            name: 'NavBar',
             passProps: {
                 phone: this.state.phone,
                 pwd: this.state.pwd,

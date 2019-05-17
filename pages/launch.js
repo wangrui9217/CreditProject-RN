@@ -8,10 +8,11 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, StatusBar, Alert, TouchableOpacity} from 'react-native';
+import {getNavigator} from './route'
 import LoginIndex from "./login";
 import NavBar from './nav'
 let toLogin = ''
-export default class Launch extends Component {
+export default class LaunchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -53,9 +54,10 @@ export default class Launch extends Component {
         clearInterval(toLogin)
     }
     toLogin() {
-        this.props.navigator.replace({
+        getNavigator().replace({
             // component:LoginIndex,
-            component:NavBar,
+            // component:NavBar,
+            name: 'NavBar'
         })
     }
 }
