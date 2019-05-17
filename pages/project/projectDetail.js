@@ -55,7 +55,7 @@ export default class ProjectDetail extends Component {
                             <View style={styles.box6}>
                                 <View style={styles.box2}>
                                     <Text style={styles.box3}>{this.props.data.rate}%</Text>
-                                    <Text style={styles.box4}>七日年化收益率{this.state.refreshing}</Text>
+                                    <Text style={styles.box4}>七日年化收益率</Text>
                                 </View>
                                 <View style={styles.box2}>
                                     <Text style={styles.box7}>{this.props.data.term}个月</Text>

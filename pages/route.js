@@ -37,7 +37,7 @@ routeMap.set('LaunchPage', {
 });
 routeMap.set('SettingIndex', {
     component: SettingIndex,
-    sceneAnimation: Navigator.SceneConfigs.FadeAndroid
+    sceneAnimation: Navigator.SceneConfigs.FloatFromBottom
 });
 routeMap.set('HomeIndex', {
     component: HomeIndex

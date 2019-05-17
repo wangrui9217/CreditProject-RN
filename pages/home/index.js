@@ -87,7 +87,7 @@ export default class HomeIndex extends Component {
             )
         } else {
             return(
-                <TouchableOpacity style={styles.home8}>
+                <TouchableOpacity style={styles.home8} onPress={() => {this.applyForMoney()}}>
                     <Text style={styles.home9}>申请额度</Text>
                 </TouchableOpacity>
             )
@@ -103,12 +103,11 @@ export default class HomeIndex extends Component {
         })
     }
     goApply (val ,index) {
+        // console.log(val, index)
         // Alert.alert(val, index.toString())
         getNavigator().push({
             name: 'ProjectDetail',
-            passProps: {
-                data: val
-            }
+            data: val
         })
     }
     _onRefresh = () => {
@@ -117,8 +116,7 @@ export default class HomeIndex extends Component {
             this.setState({refreshing: false});
         }, 2000)
     }
-    componentDidMount () {
-        this._onRefresh()
+    applyForMoney () {
         Alert.alert(
             '签署合同',
             '您有一个产品订单审核成功，签署合同后将收到你申请的借款。',
@@ -127,6 +125,9 @@ export default class HomeIndex extends Component {
                 {text: '签署合同', onPress: () => console.log('OK Pressed')},
             ],
         )
+    }
+    componentDidMount () {
+        this._onRefresh()
     }
 }
 

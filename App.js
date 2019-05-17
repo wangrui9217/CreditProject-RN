@@ -39,7 +39,6 @@ export default class App extends Component {
         //Each component name should start with an uppercase letter
         //jsx中的组件都得是大写字母开头, 否则将报错, expected a component class, got [object Object]
         let Component = getRouteMap().get(route.name).component;
-        console.log(route.name, Component, getRouteMap().get(route.name),getRouteMap(),777)
         if (!Component) {
             return (
                 <View style={styles.errorView}>
