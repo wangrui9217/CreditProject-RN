@@ -7,7 +7,17 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Alert} from 'react-native';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    Image,
+    ScrollView,
+    Alert,
+    RefreshControl
+} from 'react-native';
 import ProductItem from "../../components/productItem";
 import ProjectDetail from './../project/projectDetail'
 import {px} from './../util/fix'
@@ -18,13 +28,17 @@ export default class HomeIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            applyState: 1
+            applyState: 1,
+            refreshing: false,
         }
     }
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView refreshControl={
+                    <RefreshControl
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._onRefresh}/>}>
                     <View style={styles.home1}>
                         <Image source={require('../../img/home/home_bg.png')} style={styles.home2} resizeMode={'stretch'}/>
                         <View style={styles.home3}>
@@ -98,7 +112,14 @@ export default class HomeIndex extends Component {
             }
         })
     }
+    _onRefresh = () => {
+        this.setState({refreshing: true});
+        setTimeout(() => {
+            this.setState({refreshing: false});
+        }, 2000)
+    }
     componentDidMount () {
+        this._onRefresh()
         Alert.alert(
             '签署合同',
             '您有一个产品订单审核成功，签署合同后将收到你申请的借款。',

@@ -22,20 +22,19 @@ import {px} from './../util/fix'
 
 export default class ProjectDetail extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            refreshing: true
-        }
+            refreshing: false,
+        };
     }
     componentDidMount () {
-        // this.setState({refreshing: true});
         this._onRefresh()
     }
     _onRefresh () {
         this.setState({refreshing: true});
         setTimeout(() => {
             this.setState({refreshing: false});
-        }, 3000)
+        }, 2000)
     }
     static defaultProps =
         {
@@ -49,13 +48,13 @@ export default class ProjectDetail extends Component {
                     <ScrollView refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
-                            onRefresh={this._onRefresh}/>}>
+                            onRefresh={() => this._onRefresh()}/>}>
                         <View style={styles.box1}>
                             <Text style={styles.box5}>{this.props.data.name}</Text>
                             <View style={styles.box6}>
                                 <View style={styles.box2}>
                                     <Text style={styles.box3}>{this.props.data.rate}%</Text>
-                                    <Text style={styles.box4}>七日年化收益率</Text>
+                                    <Text style={styles.box4}>七日年化收益率{this.state.refreshing}</Text>
                                 </View>
                                 <View style={styles.box2}>
                                     <Text style={styles.box7}>{this.props.data.term}个月</Text>
@@ -112,9 +111,6 @@ export default class ProjectDetail extends Component {
                 </TouchableNativeFeedback>
             </View>
         );
-    }
-    componentDidMount() {
-        // console.log(this.props)
     }
 }
 

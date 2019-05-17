@@ -25,7 +25,10 @@ export default class ProjectIndex extends Component{
         this.setState({refreshing: true});
         setTimeout(() => {
             this.setState({refreshing: false});
-        }, 3000)
+        }, 2000)
+    }
+    componentDidMount () {
+        this._onRefresh()
     }
     render() {
     return (

@@ -30,7 +30,7 @@ export default class Launch extends Component {
                 />
                 <TouchableOpacity style={styles.countTime} onPress={() => {this.toLogin()}}>
                     <View>
-                        <Text style={styles.countTimeText}>{this.state.leftTime}</Text>
+                        <Text style={styles.countTimeText}>跳过:{this.state.leftTime}</Text>
                     </View>
                 </TouchableOpacity>
                 <Image style={styles.launch} source={require('./../img/launch.png')}/>
@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
         right:30,
         top: 30,
         backgroundColor: 'rgba(0,0,0,0.5)',
-        width: 30,
+        // width: 30,
+        paddingRight: 10,
+        paddingLeft: 10,
         height: 30,
         borderRadius: 30,
         justifyContent: 'center',
