@@ -13,6 +13,7 @@ import RowList from "../../components/RowList";
 import Head from "../../components/head";
 import NavBar from "../nav";
 import LoginIndex from './../login'
+import {getNavigator} from "../route";
 
 export default class SettingIndex extends Component {
     render() {
@@ -38,7 +39,7 @@ export default class SettingIndex extends Component {
         );
     }
     layOut () {
-        this.props.navigator.replace({
+        getNavigator().replace({
             // component: LoginIndex,
             name: 'LoginIndex'
         })

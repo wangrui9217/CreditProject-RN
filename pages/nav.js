@@ -45,7 +45,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'home'})
                                        }}
                     >
-                        <HomeIndex navigator={this.props.navigator}></HomeIndex>
+                        <HomeIndex></HomeIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='产品'
                                        titleStyle={styles.tabText}
@@ -59,7 +59,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'category'})
                                        }}
                     >
-                        <ProjectIndex navigator={this.props.navigator}></ProjectIndex>
+                        <ProjectIndex></ProjectIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='用信'
                                        titleStyle={styles.tabText}
@@ -73,7 +73,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'find'})
                                        }}
                     >
-                        <CreditIndex navigator={this.props.navigator}></CreditIndex>
+                        <CreditIndex></CreditIndex>
                     </TabNavigator.Item>
                     <TabNavigator.Item title='我的'
                                        titleStyle={styles.tabText}
@@ -87,7 +87,7 @@ export default class NavBar extends Component {
                                            this.setState({selectedTab: 'mine'})
                                        }}
                     >
-                        <MineIndex navigator={this.props.navigator}></MineIndex>
+                        <MineIndex></MineIndex>
                     </TabNavigator.Item>
                 </TabNavigator>
             </View>

@@ -19,9 +19,8 @@ import {
     RefreshControl
 } from 'react-native';
 import ProductItem from "../../components/productItem";
-import ProjectDetail from './../project/projectDetail'
 import {px} from './../util/fix'
-import NavBar from "../nav";
+import {getNavigator} from './../route'
 
 
 export default class HomeIndex extends Component {
@@ -105,8 +104,7 @@ export default class HomeIndex extends Component {
     }
     goApply (val ,index) {
         // Alert.alert(val, index.toString())
-        this.props.navigator.push({
-            // component: ProjectDetail,
+        getNavigator().push({
             name: 'ProjectDetail',
             passProps: {
                 data: val

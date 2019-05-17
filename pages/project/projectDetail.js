@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 import Head from "../../components/head";
 import {px} from './../util/fix'
+import {getNavigator} from "../route";
 
 export default class ProjectDetail extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ export default class ProjectDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Head title={this.props.data.name} navigator={this.props.navigator}></Head>
+                <Head title={this.props.data.name}></Head>
                 <View style={styles.box}>
                     <ScrollView refreshControl={
                         <RefreshControl
@@ -102,7 +103,7 @@ export default class ProjectDetail extends Component {
                 </View>
                 <TouchableNativeFeedback
                     background={TouchableNativeFeedback.SelectableBackground()}
-                    onPress={() => {this.props.navigator.pop()}}
+                    onPress={() => {getNavigator().pop()}}
                     >
                         <View style={styles.bottom}>
                             <Text style={styles.bottomBtn}>立即申请</Text>

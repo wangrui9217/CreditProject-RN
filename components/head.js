@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Image, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {px} from './../pages/util/fix'
+import {getNavigator} from "../pages/route";
 
 export default class Head extends Component {
     static defaultProps =
@@ -35,7 +36,7 @@ export default class Head extends Component {
     showBackBtn () {
         if (this.props.showReturn) {
             return (
-                <TouchableOpacity onPress={() => {this.props.navigator.pop()}} style={styles.pl32}>
+                <TouchableOpacity onPress={() => {getNavigator().pop()}} style={styles.pl32}>
                     <Image style={styles.iconImg} source={require('./../img/common/left.png')}></Image>
                 </TouchableOpacity>
             )

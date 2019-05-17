@@ -12,8 +12,8 @@ import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
 import ProductItem from "../../components/productItem";
 import {px} from "../util/fix";
-import ProjectDetail from "./projectDetail";
 import DemoComponent from './../demo'
+import {getNavigator} from "../route";
 export default class ProjectIndex extends Component{
     constructor(props) {
         super(props);
@@ -54,8 +54,7 @@ export default class ProjectIndex extends Component{
     );
   }
     goApply (val, index) {
-        this.props.navigator.push({
-            // component: DemoComponent,
+        getNavigator().push({
             name: 'DemoComponent',
             passProps: {
                 data: val

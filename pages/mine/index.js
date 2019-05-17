@@ -11,6 +11,7 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, Alert, ListView, Ima
 import {px} from './../util/fix'
 import RowList from "../../components/RowList";
 import SettingIndex from "../setting";
+import {getNavigator} from './../route'
 
 
 export default class MineIndex extends Component {
@@ -80,7 +81,7 @@ export default class MineIndex extends Component {
         Alert.alert('点击了')
     }
     goSetting () {
-        this.props.navigator.push({
+        getNavigator().push({
             name: 'SettingIndex'
             // component: SettingIndex
         })
