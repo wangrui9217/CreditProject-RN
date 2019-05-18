@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
+// import ViewPager from 'react-native-viewpager';页面滑动组建
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, FlatList, ListView,RefreshControl} from 'react-native';
 import {px} from './util/fix'
