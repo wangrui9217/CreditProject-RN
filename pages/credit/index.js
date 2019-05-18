@@ -17,9 +17,6 @@ export default class CreditIndex extends Component<Props> {
     return (
       <View style={styles.container}>
         <Head title={'用信'} showReturn={false}/>
-          <StatusBar
-              backgroundColor={'#fff'}
-          />
           <ScrollView>
               <CreditItem></CreditItem>
           </ScrollView>

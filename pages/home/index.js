@@ -34,9 +34,6 @@ export default class HomeIndex extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    backgroundColor={'#4757fe'}
-                />
                 <ScrollView refreshControl={
                     <RefreshControl
                         refreshing={this.state.refreshing}

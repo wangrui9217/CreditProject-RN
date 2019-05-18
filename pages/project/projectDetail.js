@@ -44,9 +44,6 @@ export default class ProjectDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    backgroundColor={'#fff'}
-                />
                 <Head title={this.props.data.name}></Head>
                 <View style={styles.box}>
                     <ScrollView refreshControl={

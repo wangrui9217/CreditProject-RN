@@ -29,9 +29,6 @@ export default class MineIndex extends Component {
     render() {
         return (
             <ScrollView>
-                <StatusBar
-                    backgroundColor={'#4757fe'}
-                />
                 <View style={styles.container}>
                     <View style={styles.mine1}>
                         <Image source={require('./../../img/mine/bg_wode.png')} style={styles.mine2}></Image>

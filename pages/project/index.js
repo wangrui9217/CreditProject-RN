@@ -34,10 +34,6 @@ export default class ProjectIndex extends Component{
     return (
       <View style={styles.container}>
           <Head title={'产品'} showReturn={false}/>
-          <StatusBar
-              animated={true}
-              backgroundColor={'#fff'}
-          />
           <ScrollView   refreshControl={
               <RefreshControl
                   refreshing={this.state.refreshing}
