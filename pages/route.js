@@ -33,20 +33,20 @@ routeMap.set('NavBar', {
     component: NavBar
 });
 routeMap.set('LaunchPage', {
-    component: LaunchPage
+    component: LaunchPage,
 });
 routeMap.set('SettingIndex', {
     component: SettingIndex,
     sceneAnimation: Navigator.SceneConfigs.FloatFromBottom
 });
 routeMap.set('HomeIndex', {
-    component: HomeIndex
+    component: HomeIndex,
 });
 routeMap.set('ProjectIndex', {
     component: ProjectIndex
 });
 routeMap.set('ProjectDetail', {
-    component: ProjectDetail
+    component: ProjectDetail,
 });
 routeMap.set('CreditIndex', {
     component: CreditIndex

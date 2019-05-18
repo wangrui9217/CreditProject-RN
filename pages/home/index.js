@@ -16,7 +16,7 @@ import {
     Image,
     ScrollView,
     Alert,
-    RefreshControl
+    RefreshControl, StatusBar
 } from 'react-native';
 import ProductItem from "../../components/productItem";
 import {px} from './../util/fix'
@@ -34,6 +34,9 @@ export default class HomeIndex extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    backgroundColor={'#4757fe'}
+                />
                 <ScrollView refreshControl={
                     <RefreshControl
                         refreshing={this.state.refreshing}

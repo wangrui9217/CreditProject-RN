@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, FlatList, ListView,RefreshControl} from 'react-native';
 import {px} from './util/fix'
 import LoadMoreFooter from './../components/LoadMoreFooter'
+import Head from "../components/head";
 export default class DemoComponent extends Component {
     constructor(props) {
         super(props);
@@ -28,6 +29,7 @@ export default class DemoComponent extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Head title={'测试'}></Head>
                 {
                     this.state.isEmptyData ?
                         this.isEmptyData():

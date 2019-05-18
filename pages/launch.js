@@ -22,13 +22,7 @@ export default class LaunchPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    hidden={true}
-                    // backgroundColor='rgba(255,96,0,1.0)'
-                    // backgroundColor={'red'}
-                    // barStyle={'light-content'}
-                    // animated={true}
-                />
+                <StatusBar hidden={true}></StatusBar>
                 <TouchableOpacity style={styles.countTime} onPress={() => {this.toLogin()}}>
                     <View>
                         <Text style={styles.countTimeText}>跳过:{this.state.leftTime}</Text>

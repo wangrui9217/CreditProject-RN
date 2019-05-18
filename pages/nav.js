@@ -29,6 +29,7 @@ export default class NavBar extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar
+                    hidden={false}
                     barStyle={'dark-content'}
                     backgroundColor={'#fff'}
                 />

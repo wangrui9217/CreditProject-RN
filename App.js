@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler} from 'react-native';
+import {StyleSheet, Text, View, Image, Platform, ToastAndroid, BackHandler, StatusBar} from 'react-native';
 import {Navigator} from "react-native-deprecated-custom-components";
 import {getRouteMap, registerNavigator} from './pages/route';
 let lastClickTime = 0;
@@ -16,7 +16,7 @@ export default class App extends Component {
             <View style={styles.container}>
                 <Navigator
                     style={styles.navigator}
-                    configureScene={this.configureScene}
+                    configureScene={route => this.configureScene(route)}
                     renderScene={this.renderScene}
                     initialRoute={{
                         name: 'LaunchPage'
