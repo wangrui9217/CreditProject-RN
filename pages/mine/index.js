@@ -7,7 +7,18 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Alert, ListView, Image, ScrollView} from 'react-native';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    Alert,
+    ListView,
+    Image,
+    ScrollView,
+    StatusBar
+} from 'react-native';
 import {px} from './../util/fix'
 import RowList from "../../components/RowList";
 import SettingIndex from "../setting";
@@ -18,6 +29,9 @@ export default class MineIndex extends Component {
     render() {
         return (
             <ScrollView>
+                <StatusBar
+                    backgroundColor={'#4757fe'}
+                />
                 <View style={styles.container}>
                     <View style={styles.mine1}>
                         <Image source={require('./../../img/mine/bg_wode.png')} style={styles.mine2}></Image>

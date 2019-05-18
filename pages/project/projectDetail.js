@@ -15,7 +15,7 @@ import {
     TouchableOpacity,
     ScrollView,
     TouchableNativeFeedback,
-    RefreshControl
+    RefreshControl, StatusBar
 } from 'react-native';
 import Head from "../../components/head";
 import {px} from './../util/fix'
@@ -44,6 +44,9 @@ export default class ProjectDetail extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    backgroundColor={'#fff'}
+                />
                 <Head title={this.props.data.name}></Head>
                 <View style={styles.box}>
                     <ScrollView refreshControl={

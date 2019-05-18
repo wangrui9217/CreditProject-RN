@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Image, Platform, ScrollView, StyleSheet, Text, View, RefreshControl} from 'react-native';
+import {Image, Platform, ScrollView, StyleSheet, Text, View, RefreshControl, StatusBar} from 'react-native';
 import CreditItem from "../../components/creditItem";
 import Head from "../../components/head";
 import ProductItem from "../../components/productItem";
@@ -34,6 +34,10 @@ export default class ProjectIndex extends Component{
     return (
       <View style={styles.container}>
           <Head title={'产品'} showReturn={false}/>
+          <StatusBar
+              animated={true}
+              backgroundColor={'#fff'}
+          />
           <ScrollView   refreshControl={
               <RefreshControl
                   refreshing={this.state.refreshing}
