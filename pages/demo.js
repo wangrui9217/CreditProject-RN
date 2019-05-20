@@ -1,4 +1,13 @@
 // import ViewPager from 'react-native-viewpager';页面滑动组建
+//跳转并清空路由记录
+// import { NavigationActions } from 'react-navigation'
+// const  resetAction = NavigationActions.reset({
+//     index: 0,
+//     actions: [
+//         NavigationActions.navigate({routeName:'xxx'})//要跳转到的页面名字
+//     ]
+// });
+// this.props.navigation.dispatch(resetAction);
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, FlatList, ListView,RefreshControl} from 'react-native';
 import {px} from './util/fix'
