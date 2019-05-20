@@ -14,8 +14,16 @@ import Head from "../../components/head";
 import NavBar from "../nav";
 import LoginIndex from './../login'
 import {getNavigator} from "../route";
+import Toast from './../util/toast'
+import LoadingManagerView from './../../components/LoadingManagerView'
 
 export default class SettingIndex extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loadingStatus: LoadingManagerView.LoadingSuccess
+        };
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -27,7 +35,10 @@ export default class SettingIndex extends Component {
                 </View>
                 <View style={styles.mt16}>
                     <RowList leftTitle={'意见反馈'}></RowList>
-                    <RowList leftTitle={'关于'}></RowList>
+                    <RowList leftTitle={'功能介绍'}></RowList>
+                    <RowList leftTitle={'去评分'}></RowList>
+                    <RowList leftTitle={'版本更新'} pressAlert={() => {Toast.show('当前已是最新版本')}}></RowList>
+                    {/*<RowList leftTitle={'关于'}></RowList>*/}
                 </View>
                     <View style={styles.mt16}>
                         <TouchableOpacity style={styles.logout} onPress={() => this.layOut()}>
@@ -35,6 +46,7 @@ export default class SettingIndex extends Component {
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
+                <LoadingManagerView status={this.state.loadingStatus}></LoadingManagerView>
             </View>
         );
     }
