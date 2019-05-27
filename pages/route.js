@@ -34,6 +34,7 @@ routeMap.set('NavBar', {
 });
 routeMap.set('LaunchPage', {
     component: LaunchPage,
+    hidden: true
 });
 routeMap.set('SettingIndex', {
     component: SettingIndex,

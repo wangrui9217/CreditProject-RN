@@ -28,11 +28,6 @@ export default class NavBar extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    hidden={false}
-                    barStyle={'dark-content'}
-                    backgroundColor={'#fff'}
-                />
                 <TabNavigator>
                     <TabNavigator.Item title='首页'
                                        titleStyle={styles.tabText}

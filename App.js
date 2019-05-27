@@ -38,7 +38,8 @@ export default class App extends Component {
         registerNavigator(navigator);
         //Each component name should start with an uppercase letter
         //jsx中的组件都得是大写字母开头, 否则将报错, expected a component class, got [object Object]
-        let Component = getRouteMap().get(route.name).component;
+        let component = getRouteMap().get(route.name)
+        let Component = component.component;
         if (!Component) {
             return (
                 <View style={styles.errorView}>
@@ -47,7 +48,14 @@ export default class App extends Component {
             );
         }
         return (
-            <Component {...route}/>
+            <View style={styles.container}>
+                <StatusBar
+                    hidden={component.hidden || false}
+                    barStyle={component.barStyle || 'dark-content'}
+                    backgroundColor={component.backgroundColor || '#fff'}
+                />
+                <Component {...route}/>
+            </View>
         );
     }
 
