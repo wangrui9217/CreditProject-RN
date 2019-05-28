@@ -39,7 +39,7 @@ export default class MineIndex extends Component {
                                 <Text style={styles.mine4}>上海指望金科</Text>
                             </View>
                             <View style={{flexDirection:'row'}}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => {getNavigator().push({name: 'WebViewDemo'})}}>
                                     <Image source={require('./../../img/mine/personal_message_red.png')}
                                            style={styles.mine6}></Image>
                                 </TouchableOpacity>

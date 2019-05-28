@@ -8,6 +8,7 @@ import CreditIndex from './credit'
 import LoginIndex from './login'
 import MineIndex from './mine'
 import DemoComponent from './demo'
+import WebViewDemo from './webView'
 import {
     Navigator,
 } from 'react-native-deprecated-custom-components';
@@ -63,6 +64,9 @@ routeMap.set('MineIndex', {
 });
 routeMap.set('DemoComponent', {
     component: DemoComponent
+});
+routeMap.set('WebViewDemo', {
+    component: WebViewDemo
 });
 
 
