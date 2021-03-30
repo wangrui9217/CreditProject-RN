@@ -1965,7 +1965,7 @@ escape-html@~1.0.3:
   resolved "https://registry.npm.taobao.org/escape-html/download/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
-escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
+escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/escape-string-regexp/download/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
@@ -2716,7 +2716,7 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npm.taobao.org/invariant/download/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha1-YQ88ksk1nOHbYW5TgAjSP/NRWOY=
@@ -4970,6 +4970,14 @@ react-native-tab-view@^1.2.0, react-native-tab-view@^1.4.0:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-webview@^5.10.0:
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-5.12.1.tgz#5e2b124e9087d64fc40040d911c10ee5744b5d4d"
+  integrity sha512-pFYzyNUG+k7Jk2a0Z3S1+OL9qtp0VQxVP08d1ume/O6l1Xibi0K0hRZms7zPUHqQc2uWEfjZ0FOa17MIN7vruw==
+  dependencies:
+    escape-string-regexp "1.0.5"
+    invariant "2.2.4"
+
 react-native@0.59.8:
   version "0.59.8"
   resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.59.8.tgz#ade4141c777c60f5ec4889d9811d0f80a9d56547"
@@ -6337,9 +6345,9 @@ xtend@~4.0.1:
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/y18n/download/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0":
   version "4.0.0"
